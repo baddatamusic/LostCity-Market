@@ -26,7 +26,7 @@ const onSearch = (searchTerm: string, loading: (state: boolean) => void) => {
 const fetchItems = _.debounce(
     (search: string, loading: (state: boolean) => void) => {
         fetch(
-            `${route("items.index")}?q=${search}${props.includeBanners ? "&include_banners=true" : ""}${props.includeUnlisted ? "&include_unlisted=true" : ""}`,
+            `${route("api.items.index")}?q=${search}${props.includeBanners ? "&include_banners=true" : ""}${props.includeUnlisted ? "&include_unlisted=true" : ""}`,
         )
             .then((response) => response.json())
             .then((data) => {

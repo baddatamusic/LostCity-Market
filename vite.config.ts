@@ -8,6 +8,12 @@ import components from "unplugin-vue-components/vite"
 
 export default defineConfig(({ isSsrBuild }) => {
   return {
+    server: {
+      host: "0.0.0.0",
+      hmr: {
+        host: "162.218.52.178",
+      },
+    },
     resolve: {
       alias: {
         "@": "/resources",

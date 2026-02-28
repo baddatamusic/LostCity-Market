@@ -3,5 +3,6 @@
 return [
     App\Providers\AppServiceProvider::class,
     App\Providers\InertiaServiceProvider::class,
-    \SocialiteProviders\Manager\ServiceProvider::class,
+    App\Providers\TelescopeServiceProvider::class,
+    SocialiteProviders\Manager\ServiceProvider::class,
 ];

@@ -11,7 +11,7 @@ class AdminUserData extends Data
         public int $id,
         public string $name,
         public string $email,
-        public string $discordId,
+        public ?string $discordId,
         public DateTime $createdAt,
         public bool $isAdmin,
         public bool $isBanned,
