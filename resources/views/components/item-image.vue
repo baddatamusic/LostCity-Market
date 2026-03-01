@@ -39,8 +39,24 @@ const src = computed(() => {
 });
 
 const alt = computed(() => (props.item ? props.item.name : ""));
+
+const failed = ref(false);
 </script>
 
 <template>
-    <img v-if="item" class="min-h-[24px] min-w-[24px]" :src="src" :alt="alt" />
+    <img
+        v-if="item && !failed"
+        class="min-h-[24px] min-w-[24px]"
+        :src="src"
+        :alt="alt"
+        @error="failed = true"
+    />
+
+    <div
+        v-else-if="item && failed"
+        class="flex size-[24px] min-h-[24px] min-w-[24px] items-center justify-center bg-stone-700 text-xs text-stone-400"
+        :title="alt"
+    >
+        ?
+    </div>
 </template>
