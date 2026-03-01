@@ -46,8 +46,7 @@ class UserController
             $search = $filters['search'];
 
             $users = $users->where(function ($q) use ($search) {
-                $q->where('discord_id', $search)
-                    ->orWhere('name', $search)
+                $q->where('name', $search)
                     ->orWhere('email', $search)
                     ->orWhereHas('usernames', fn ($uq) => $uq->where('username', $search));
             });

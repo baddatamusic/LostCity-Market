@@ -1,23 +1,24 @@
 <script setup lang="ts">
 const form = useForm({
     name: '',
+    email: '',
     password: '',
-    remember: false,
+    password_confirmation: '',
 });
 
 const submit = () => {
-    form.post(route('login.store'), {
-        onFinish: () => form.reset('password'),
+    form.post(route('register.store'), {
+        onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
 </script>
 
 <template>
     <LayoutMain>
-        <Head title="Login" />
+        <Head title="Register" />
 
         <div class="mx-auto max-w-sm">
-            <h1 class="mb-6 text-2xl font-semibold">Login</h1>
+            <h1 class="mb-6 text-2xl font-semibold">Register</h1>
 
             <form
                 class="flex flex-col gap-4 border-2 border-[#382418] bg-black p-4"
@@ -45,25 +46,39 @@ const submit = () => {
                 </div>
 
                 <div class="flex flex-col gap-2">
+                    <label for="email">Email</label>
+                    <input
+                        id="email"
+                        v-model="form.email"
+                        type="email"
+                        class="border border-stone-700 bg-stone-900 p-2"
+                        autocomplete="email"
+                        required
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
                     <label for="password">Password</label>
                     <input
                         id="password"
                         v-model="form.password"
                         type="password"
                         class="border border-stone-700 bg-stone-900 p-2"
-                        autocomplete="current-password"
+                        autocomplete="new-password"
                         required
                     />
                 </div>
 
-                <div class="flex items-center gap-2">
+                <div class="flex flex-col gap-2">
+                    <label for="password_confirmation">Confirm Password</label>
                     <input
-                        id="remember"
-                        v-model="form.remember"
-                        type="checkbox"
-                        class="cursor-pointer"
+                        id="password_confirmation"
+                        v-model="form.password_confirmation"
+                        type="password"
+                        class="border border-stone-700 bg-stone-900 p-2"
+                        autocomplete="new-password"
+                        required
                     />
-                    <label for="remember" class="cursor-pointer">Remember me</label>
                 </div>
 
                 <BaseButton
@@ -72,13 +87,13 @@ const submit = () => {
                     :disabled="form.processing"
                     class="!px-6 !py-2"
                 >
-                    Login
+                    Register
                 </BaseButton>
 
                 <p class="text-center text-sm text-stone-400">
-                    Don't have an account?
-                    <Link :href="route('register')" class="text-[#90c040] hover:underline">
-                        Register
+                    Already have an account?
+                    <Link :href="route('login')" class="text-[#90c040] hover:underline">
+                        Login
                     </Link>
                 </p>
             </form>

@@ -6,8 +6,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserListingController;
 use App\Http\Controllers\Admin\UserLogController;
 use App\Http\Controllers\Auth\AccountController;
-use App\Http\Controllers\Auth\DiscordController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BanController;
 use App\Http\Controllers\BumpController;
 use App\Http\Controllers\FavoriteController;
@@ -99,17 +99,20 @@ Route::get('items/{item:slug}', [ItemController::class, 'show'])
 Route::get('users/{username:username}', [UsernameController::class, 'show'])
     ->name('usernames.show');
 
-Route::get('/auth/discord', [DiscordController::class, 'redirectToDiscord'])
-    ->name('auth.discord');
-
-Route::get('/auth/discord/callback', [DiscordController::class, 'handleDiscordCallback'])
-    ->name('auth.discord.callback');
-
 Route::get('login', [LoginController::class, 'index'])
     ->name('login');
 
+Route::post('login', [LoginController::class, 'store'])
+    ->name('login.store');
+
 Route::delete('logout', [LoginController::class, 'destroy'])
     ->name('logout');
+
+Route::get('register', [RegisterController::class, 'create'])
+    ->name('register');
+
+Route::post('register', [RegisterController::class, 'store'])
+    ->name('register.store');
 
 Route::get('docs/adopt-legacy-accounts', function () {
     return inertia('docs/adopt/page');

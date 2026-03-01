@@ -26,7 +26,7 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
-        'discord_id',
+        'password',
         'banned_at',
         'is_banned',
         'is_admin',
@@ -40,7 +40,6 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password',
         'remember_token',
-        'discord_id',
         'email',
         'name',
     ];

@@ -21,7 +21,7 @@ const auth = useAuth();
                 <h2
                     class="size-fit border-b-2 border-stone-700 pb-1 text-lg font-semibold text-stone-300"
                 >
-                    Discord Name
+                    Username
                 </h2>
 
                 <div>

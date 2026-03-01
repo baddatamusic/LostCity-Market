@@ -17,17 +17,11 @@ const props = defineProps<Pages.Admin.UsersShowPage>();
                 <h2
                     class="size-fit border-b-2 border-stone-700 pb-1 text-lg font-semibold text-stone-300"
                 >
-                    Discord Name
+                    Username
                 </h2>
 
                 <div>
-                    <p>
-                        {{ props.selected_user.name }} (id:
-                        <span class="text-stone-400">{{
-                            props.selected_user.discordId
-                        }}</span
-                        >)
-                    </p>
+                    <p>{{ props.selected_user.name }}</p>
                 </div>
             </div>
 
