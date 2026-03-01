@@ -164,7 +164,6 @@ export type AdminUserData = {
 id: number;
 name: string;
 email: string;
-discordId: string | null;
 createdAt: string;
 isAdmin: boolean;
 isBanned: boolean;
