@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserListingController;
 use App\Http\Controllers\Admin\UserLogController;
 use App\Http\Controllers\Auth\AccountController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BanController;
 use App\Http\Controllers\BumpController;
 use App\Http\Controllers\FavoriteController;
@@ -113,6 +115,18 @@ Route::get('register', [RegisterController::class, 'create'])
 
 Route::post('register', [RegisterController::class, 'store'])
     ->name('register.store');
+
+Route::get('forgot-password', [ForgotPasswordController::class, 'create'])
+    ->name('password.request');
+
+Route::post('forgot-password', [ForgotPasswordController::class, 'store'])
+    ->name('password.email');
+
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'create'])
+    ->name('password.reset');
+
+Route::post('reset-password', [ResetPasswordController::class, 'store'])
+    ->name('password.update');
 
 Route::get('docs/adopt-legacy-accounts', function () {
     return inertia('docs/adopt/page');

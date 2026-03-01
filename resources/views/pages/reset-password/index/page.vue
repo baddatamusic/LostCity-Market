@@ -1,23 +1,26 @@
 <script setup lang="ts">
+const props = defineProps<{ token: string; email: string }>();
+
 const form = useForm({
-    name: '',
+    token: props.token,
+    email: props.email,
     password: '',
-    remember: false,
+    password_confirmation: '',
 });
 
 const submit = () => {
-    form.post(route('login.store'), {
-        onFinish: () => form.reset('password'),
+    form.post(route('password.update'), {
+        onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
 </script>
 
 <template>
     <LayoutMain>
-        <Head title="Login" />
+        <Head title="Reset Password" />
 
         <div class="mx-auto max-w-sm">
-            <h1 class="mb-6 text-2xl font-semibold">Login</h1>
+            <h1 class="mb-6 text-2xl font-semibold">Reset Password</h1>
 
             <form
                 class="flex flex-col gap-4 border-2 border-[#382418] bg-black p-4"
@@ -33,37 +36,39 @@ const submit = () => {
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <label for="name">Username</label>
+                    <label for="email">Email</label>
                     <input
-                        id="name"
-                        v-model="form.name"
-                        type="text"
+                        id="email"
+                        v-model="form.email"
+                        type="email"
                         class="border border-stone-700 bg-stone-900 p-2"
-                        autocomplete="username"
+                        autocomplete="email"
                         required
                     />
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <label for="password">Password</label>
+                    <label for="password">New Password</label>
                     <input
                         id="password"
                         v-model="form.password"
                         type="password"
                         class="border border-stone-700 bg-stone-900 p-2"
-                        autocomplete="current-password"
+                        autocomplete="new-password"
                         required
                     />
                 </div>
 
-                <div class="flex items-center gap-2">
+                <div class="flex flex-col gap-2">
+                    <label for="password_confirmation">Confirm New Password</label>
                     <input
-                        id="remember"
-                        v-model="form.remember"
-                        type="checkbox"
-                        class="cursor-pointer"
+                        id="password_confirmation"
+                        v-model="form.password_confirmation"
+                        type="password"
+                        class="border border-stone-700 bg-stone-900 p-2"
+                        autocomplete="new-password"
+                        required
                     />
-                    <label for="remember" class="cursor-pointer">Remember me</label>
                 </div>
 
                 <BaseButton
@@ -72,18 +77,8 @@ const submit = () => {
                     :disabled="form.processing"
                     class="!px-6 !py-2"
                 >
-                    Login
+                    Reset Password
                 </BaseButton>
-
-                <div class="flex justify-between text-sm text-stone-400">
-                    <Link :href="route('password.request')" class="text-[#90c040] hover:underline">
-                        Forgot password?
-                    </Link>
-
-                    <Link :href="route('register')" class="text-[#90c040] hover:underline">
-                        Register
-                    </Link>
-                </div>
             </form>
         </div>
     </LayoutMain>
