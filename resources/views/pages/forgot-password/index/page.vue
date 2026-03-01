@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const form = useForm({
-    email: '',
+    email: "",
 });
 
 const submit = () => {
-    form.post(route('password.email'));
+    form.post(route("password.email"));
 };
 </script>
 
@@ -20,7 +20,8 @@ const submit = () => {
                 @submit.prevent="submit"
             >
                 <p class="text-sm text-stone-400">
-                    Enter your email address and we'll send you a link to reset your password.
+                    Enter your email address and we'll send you a link to reset
+                    your password.
                 </p>
 
                 <div
@@ -34,6 +35,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="email">Email</label>
+
                     <input
                         id="email"
                         v-model="form.email"
@@ -54,7 +56,10 @@ const submit = () => {
                 </BaseButton>
 
                 <p class="text-center text-sm text-stone-400">
-                    <Link :href="route('login')" class="text-[#90c040] hover:underline">
+                    <Link
+                        :href="route('login')"
+                        class="text-[#90c040] hover:underline"
+                    >
                         Back to Login
                     </Link>
                 </p>

@@ -24,7 +24,7 @@ if (import.meta.env.VITE_PUSHER_APP_KEY) {
     });
 }
 
-const appName = "Lost City Markets";
+const appName = "RN04 Markets";
 
 createInertiaApp({
     title: (title: string) => (title ? `${title} — ${appName}` : `${appName}`),

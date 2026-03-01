@@ -13,42 +13,28 @@ const auth = useAuth();
         </h2>
 
         <p>
-            You are successfully logged in with Discord, but you have no Lost
-            City accounts imported. You will not be able to post listings until
-            your Lost City accounts are imported. The issue may be due to one of
-            two reasons:
+            You have no RN04 accounts imported. You will not be able to post
+            listings until your RN04 accounts are imported.
         </p>
 
         <hr class="border-red-700" />
 
-        <ul class="flex list-inside list-decimal flex-col gap-3">
-            <li>
-                You have not linked your Lost City account(s) with Discord. You
-                can find instructions for adopting accounts to Discord by
-                <Link
-                    :href="route('docs.adopt')"
-                    class="text-[#90c040] hover:underline"
-                    >clicking here</Link
-                >.
-            </li>
-
-            <li>
-                There was an error retrieving your Lost City accounts. You can
-                try to retrieve them again by
-                <button
-                    type="button"
-                    class="text-[#90c040] hover:underline"
-                    @click="
-                        router.patch(
-                            route('usernames.update', {
-                                preserveScroll: true,
-                            }),
-                        )
-                    "
-                >
-                    clicking here</button
-                >.
-            </li>
-        </ul>
+        <p>
+            There was an error retrieving your RN04 accounts. You can try to
+            retrieve them again by
+            <button
+                type="button"
+                class="text-[#90c040] hover:underline"
+                @click="
+                    router.patch(
+                        route('usernames.update', {
+                            preserveScroll: true,
+                        }),
+                    )
+                "
+            >
+                clicking here</button
+            >.
+        </p>
     </Alert>
 </template>

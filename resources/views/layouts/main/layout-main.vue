@@ -195,7 +195,7 @@ const links = computed(() => [
                 <div
                     class="mx-auto mb-5 w-fit min-w-[250px] border-2 border-[#382418] bg-black p-1 text-center"
                 >
-                    <h1 class="font-bold">Lost City Markets</h1>
+                    <h1 class="font-bold">RN04 Markets</h1>
 
                     <div
                         class="flex flex-row flex-wrap items-center justify-center gap-1"
@@ -235,7 +235,7 @@ const links = computed(() => [
                             href="https://2004.lostcity.rs"
                             target="_blank"
                             class="text-[#90c040] hover:underline"
-                            >Lost City</a
+                            >RN04</a
                         >
                     </p>
 
@@ -249,7 +249,7 @@ const links = computed(() => [
 
                         <p class="flex gap-1">
                             Made by
-                            <span class="text-[#90c040]"> BigShot </span>
+                            <span class="text-[#90c040]"> Blackberry </span>
                             with love
                             <HeartIcon class="size-5 text-red-500" />
                         </p>

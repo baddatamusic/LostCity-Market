@@ -33,7 +33,7 @@ import { ExclamationTriangleIcon } from "@heroicons/vue/24/outline";
                 >
                     <p>
                         After careful consideration, I have decided to shut down
-                        Lost City Markets.
+                        RN04 Markets.
                     </p>
 
                     <p>
@@ -51,7 +51,7 @@ import { ExclamationTriangleIcon } from "@heroicons/vue/24/outline";
                     <p>
                         Thank you,<br />
 
-                        <span class="text-[#90c040]">BigShot</span>
+                        <span class="text-[#90c040]">Blackberry</span>
                     </p>
                 </article>
             </section>

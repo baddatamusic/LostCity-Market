@@ -15,7 +15,7 @@ const props = defineProps<Pages.ReferralsIndexPage>();
                 <h1 class="text-2xl font-semibold">Referrals</h1>
 
                 <p class="text-stone-300">
-                    Referral codes used to redirect users to Lost City.
+                    Referral codes used to redirect users to RN04.
                 </p>
             </div>
         </div>

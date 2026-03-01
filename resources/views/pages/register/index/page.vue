@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const form = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
 });
 
 const submit = () => {
-    form.post(route('register.store'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+    form.post(route("register.store"), {
+        onFinish: () => form.reset("password", "password_confirmation"),
     });
 };
 </script>
@@ -35,6 +35,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="name">Username</label>
+
                     <input
                         id="name"
                         v-model="form.name"
@@ -47,6 +48,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="email">Email</label>
+
                     <input
                         id="email"
                         v-model="form.email"
@@ -59,6 +61,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="password">Password</label>
+
                     <input
                         id="password"
                         v-model="form.password"
@@ -71,6 +74,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="password_confirmation">Confirm Password</label>
+
                     <input
                         id="password_confirmation"
                         v-model="form.password_confirmation"
@@ -92,7 +96,10 @@ const submit = () => {
 
                 <p class="text-center text-sm text-stone-400">
                     Already have an account?
-                    <Link :href="route('login')" class="text-[#90c040] hover:underline">
+                    <Link
+                        :href="route('login')"
+                        class="text-[#90c040] hover:underline"
+                    >
                         Login
                     </Link>
                 </p>

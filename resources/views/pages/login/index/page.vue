@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const form = useForm({
-    name: '',
-    password: '',
+    name: "",
+    password: "",
     remember: false,
 });
 
 const submit = () => {
-    form.post(route('login.store'), {
-        onFinish: () => form.reset('password'),
+    form.post(route("login.store"), {
+        onFinish: () => form.reset("password"),
     });
 };
 </script>
@@ -34,6 +34,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="name">Username</label>
+
                     <input
                         id="name"
                         v-model="form.name"
@@ -46,6 +47,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="password">Password</label>
+
                     <input
                         id="password"
                         v-model="form.password"
@@ -63,7 +65,10 @@ const submit = () => {
                         type="checkbox"
                         class="cursor-pointer"
                     />
-                    <label for="remember" class="cursor-pointer">Remember me</label>
+
+                    <label for="remember" class="cursor-pointer"
+                        >Remember me</label
+                    >
                 </div>
 
                 <BaseButton
@@ -76,11 +81,17 @@ const submit = () => {
                 </BaseButton>
 
                 <div class="flex justify-between text-sm text-stone-400">
-                    <Link :href="route('password.request')" class="text-[#90c040] hover:underline">
+                    <Link
+                        :href="route('password.request')"
+                        class="text-[#90c040] hover:underline"
+                    >
                         Forgot password?
                     </Link>
 
-                    <Link :href="route('register')" class="text-[#90c040] hover:underline">
+                    <Link
+                        :href="route('register')"
+                        class="text-[#90c040] hover:underline"
+                    >
                         Register
                     </Link>
                 </div>

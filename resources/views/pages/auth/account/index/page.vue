@@ -69,7 +69,7 @@ const auth = useAuth();
                             >
                                 Click here
                             </button>
-                            to get your latest usernames from Lost City.
+                            to get your latest usernames from RN04.
                         </p>
                     </Alert>
                 </div>

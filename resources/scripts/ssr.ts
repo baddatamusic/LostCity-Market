@@ -9,7 +9,7 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { trail } from "momentum-trail";
 import routes from "./routes/routes.json";
 
-const appName = "Lost City Market";
+const appName = "RN04 Market";
 
 createServer((page: Page) =>
     createInertiaApp({

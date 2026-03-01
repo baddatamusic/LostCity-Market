@@ -4,13 +4,13 @@ const props = defineProps<{ token: string; email: string }>();
 const form = useForm({
     token: props.token,
     email: props.email,
-    password: '',
-    password_confirmation: '',
+    password: "",
+    password_confirmation: "",
 });
 
 const submit = () => {
-    form.post(route('password.update'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+    form.post(route("password.update"), {
+        onFinish: () => form.reset("password", "password_confirmation"),
     });
 };
 </script>
@@ -37,6 +37,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="email">Email</label>
+
                     <input
                         id="email"
                         v-model="form.email"
@@ -49,6 +50,7 @@ const submit = () => {
 
                 <div class="flex flex-col gap-2">
                     <label for="password">New Password</label>
+
                     <input
                         id="password"
                         v-model="form.password"
@@ -60,7 +62,10 @@ const submit = () => {
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <label for="password_confirmation">Confirm New Password</label>
+                    <label for="password_confirmation"
+                        >Confirm New Password</label
+                    >
+
                     <input
                         id="password_confirmation"
                         v-model="form.password_confirmation"
