@@ -50,28 +50,6 @@ const auth = useAuth();
                     </ul>
 
                     <span v-else class="text-stone-400">None</span>
-
-                    <hr class="border-stone-700" />
-
-                    <Alert>
-                        <p class="text-sm">
-                            Usernames not accurate?
-                            <button
-                                type="button"
-                                class="text-[#90c040] hover:underline"
-                                @click="
-                                    router.patch(
-                                        route('usernames.update', {
-                                            preserveScroll: true,
-                                        }),
-                                    )
-                                "
-                            >
-                                Click here
-                            </button>
-                            to get your latest usernames from RN04.
-                        </p>
-                    </Alert>
                 </div>
             </div>
 
