@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Username;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +27,11 @@ class RegisterController
         ]);
 
         $user = User::create($validated);
+
+        Username::create([
+            'user_id' => $user->id,
+            'username' => $user->name,
+        ]);
 
         Auth::login($user, true);
 
