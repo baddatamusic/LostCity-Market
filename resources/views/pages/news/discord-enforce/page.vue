@@ -53,14 +53,14 @@
                 <p class="mt-2">
                     On Feb 18th,
                     <a
-                        href="https://2004.lostcity.rs"
+                        href="https://rn04.com"
                         target="_blank"
                         class="text-[#90c040] hover:underline"
                         >Lost City</a
                     >
                     started requiring new players to
                     <a
-                        href="https://2004.lostcity.rs/news/192"
+                        href="https://rn04.com/news/192"
                         target="_blank"
                         class="text-[#90c040] hover:underline"
                         >authenticate their accounts through Discord</a

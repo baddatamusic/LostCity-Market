@@ -232,7 +232,7 @@ const links = computed(() => [
                     <p>
                         Fan project. Not affiliated with
                         <a
-                            href="https://2004.lostcity.rs"
+                            href="https://rn04.com"
                             target="_blank"
                             class="text-[#90c040] hover:underline"
                             >RN04</a

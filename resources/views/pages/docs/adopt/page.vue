@@ -31,17 +31,17 @@ const auth = useAuth();
                 <p>
                     Go to the
                     <a
-                        href="https://2004.lostcity.rs/account/login"
+                        href="https://rn04.com/account/login"
                         target="_blank"
                         class="text-[#90c040] hover:underline"
                         >Lost City login page
                     </a>
 
                     (<a
-                        href="https://2004.lostcity.rs/account/login"
+                        href="https://rn04.com/account/login"
                         target="_blank"
                         class="text-xs text-[#90c040] hover:underline"
-                        ><i>https://2004.lostcity.rs/account/login</i>
+                        ><i>https://rn04.com/account/login</i>
                     </a>
 
                     ) and click '<u>Continue with Discord</u>'.
