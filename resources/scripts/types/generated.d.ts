@@ -39,6 +39,15 @@ display_scope: Enums.BannerDisplayScope | null;
 };
 }
 declare namespace Data.Item {
+export type AdminItemCreateFormData = {
+game_id: number;
+name: string;
+slug: string;
+cost: number;
+description: string | null;
+is_active: boolean;
+is_listable: boolean;
+};
 export type AdminItemData = {
 id: number;
 name: string;
@@ -242,6 +251,9 @@ search: string | null;
 is_active: boolean | null;
 is_listable: boolean | null;
 sort: string | null;
+};
+export type ItemsCreatePage = {
+itemForm: Data.Item.AdminItemCreateFormData;
 };
 export type ItemsEditPage = {
 item: Data.Item.AdminItemData;

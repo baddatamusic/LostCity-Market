@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Data\Item\AdminItemCreateFormData;
 use App\Data\Item\AdminItemData;
 use App\Data\Item\AdminItemFormData;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\HandlesQuerySort;
 use App\Models\Item;
 use App\Pages\Admin\ItemFiltersData;
+use App\Pages\Admin\ItemsCreatePage;
 use App\Pages\Admin\ItemsEditPage;
 use App\Pages\Admin\ItemsIndexPage;
 use App\Services\FilterService;
@@ -68,6 +70,31 @@ class ItemController extends Controller
                 sort: $filters['sort'] ?? null,
             )
         ));
+    }
+
+    public function create()
+    {
+        return Inertia::modal('admin/items/create/page', new ItemsCreatePage(
+            itemForm: new AdminItemCreateFormData(
+                game_id: 0,
+                name: '',
+                slug: '',
+                cost: 1,
+                description: null,
+                is_active: true,
+                is_listable: true
+            ),
+        ))
+            ->baseRoute('admin.items.index');
+    }
+
+    public function store(AdminItemCreateFormData $data)
+    {
+        $item = new Item($data->toArray());
+        $item->timestamps = false;
+        $item->save();
+
+        return redirect()->route('admin.items.index')->success('The item has been created');
     }
 
     public function edit(Item $item)

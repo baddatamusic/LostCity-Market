@@ -5,6 +5,7 @@ import {
     PencilSquareIcon,
     CheckCircleIcon,
     XCircleIcon,
+    PlusIcon,
 } from "@heroicons/vue/24/outline";
 import { pickBy } from "lodash";
 
@@ -30,14 +31,27 @@ const submitFilter = () => {
     <LayoutAdmin>
         <Head title="Manage Items" />
 
-        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <BuildingStorefrontIcon class="size-12 text-stone-400" />
+        <div
+            class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+        >
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+                <BuildingStorefrontIcon class="size-12 text-stone-400" />
 
-            <div>
-                <h1 class="text-2xl font-semibold">Manage Items</h1>
+                <div>
+                    <h1 class="text-2xl font-semibold">Manage Items</h1>
 
-                <p class="text-stone-300">View and manage the items.</p>
+                    <p class="text-stone-300">View and manage the items.</p>
+                </div>
             </div>
+
+            <BaseButton
+                variant="success"
+                as="link"
+                :href="route('admin.items.create')"
+            >
+                <PlusIcon class="size-4" />
+                Create Item
+            </BaseButton>
         </div>
 
         <hr class="my-5 border-t-2 border-stone-800" />
